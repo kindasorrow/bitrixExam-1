@@ -16,9 +16,11 @@ foreach($arResult as $arItem):?>
 	<?endif?>
 
 	<?if ($arItem["IS_PARENT"]):?>
-
 		<?if ($arItem["DEPTH_LEVEL"] == 1):?>
-			<li><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a>
+		<?
+			$color =  !empty($arItem["PARAMS"]["CLASS_STYLE"]) ? $arItem["PARAMS"]["CLASS_STYLE"] : '';
+		?>
+			<li><a href="<?=$arItem["LINK"]?>" class="<?=$color?>"><?=$arItem["TEXT"]?></a>
 				<ul>
 		<?else:?>
 			<li><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a>
