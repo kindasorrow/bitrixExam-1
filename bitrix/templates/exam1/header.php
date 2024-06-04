@@ -74,67 +74,22 @@ IncludeTemplateLangFile(__FILE__);
         <!-- /header -->
         <!-- nav -->
         <nav class="nav">
-            <div class="inner-wrap">
-                <div class="menu-block popup-wrap">
-                    <a href="" class="btn-menu btn-toggle"></a>
-                    <div class="menu popup-block">
-                        <ul class="">
-                            <li class="main-page"><a href="">Главная</a>
-                            </li>
-                            <li>
-                                <a href="">Компания</a>
-                                <ul>
-                                    <li>
-                                        <a href="">Пункт 1</a>
-                                        <ul>
-                                            <li><a href="">Пункт 1</a>
-                                            </li>
-                                            <li><a href="">Пункт 2</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="">Пункт 2</a>
-                                    </li>
-                                    <li><a href="">Пункт 3</a>
-                                    </li>
-                                    <li><a href="">Пункт 4</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="">Новости</a>
-                            </li>
-                            <li>
-                                <a href="">Каталог</a>
-                                <ul>
-                                    <li>
-                                        <a href="">Пункт 1</a>
-                                        <ul>
-                                            <li><a href="">Пункт 1</a>
-                                            </li>
-                                            <li><a href="">Пункт 2</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="">Пункт 2</a>
-                                    </li>
-                                    <li><a href="">Пункт 3</a>
-                                    </li>
-                                    <li><a href="">Пункт 4</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="">Фотогалерея</a>
-                            </li>
-                            <li><a href="">Партнерам</a>
-                            </li>
-                            <li><a href="">Контакты</a>
-                            </li>
-                        </ul>
-                        <a href="" class="btn-close"></a>
-                    </div>
-                    <div class="menu-overlay"></div>
-                </div>
-            </div>
+		<?$APPLICATION->IncludeComponent(
+			"bitrix:menu",
+			"main_horizontal_multilevel",
+			Array(
+				"ALLOW_MULTI_SELECT" => "N",
+				"CHILD_MENU_TYPE" => "left",
+				"DELAY" => "N",
+				"MAX_LEVEL" => "3",
+				"MENU_CACHE_GET_VARS" => array(0=>"",),
+				"MENU_CACHE_TIME" => "3600",
+				"MENU_CACHE_TYPE" => "N",
+				"MENU_CACHE_USE_GROUPS" => "Y",
+				"ROOT_MENU_TYPE" => "top",
+				"USE_EXT" => "Y"
+			)
+		);?>
         </nav>
         <!-- /nav -->
 		<?if($APPLICATION->GetCurDir() != '/'):?>
