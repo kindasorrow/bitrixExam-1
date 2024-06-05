@@ -24,6 +24,14 @@
 	),
 	false
 );?>
+					<?$APPLICATION->IncludeComponent("bitrix:main.include", "include_block", Array(
+	"AREA_FILE_RECURSIVE" => "Y",	// Рекурсивное подключение включаемых областей разделов
+		"AREA_FILE_SHOW" => "sect",	// Показывать включаемую область
+		"AREA_FILE_SUFFIX" => "inc",	// Суффикс имени файла включаемой области
+		"EDIT_TEMPLATE" => "",	// Шаблон области по умолчанию
+	),
+	false
+);?>
                     <!-- side anonse -->
                     <div class="side-block side-anonse">
                         <div class="title-block"><span class="i i-title01"></span>Полезная информация!</div>
