@@ -68,6 +68,13 @@ $this->setFrameMode(true);
 					>
 				</div>
 			<?endif;?>
+		<?else:?>
+				<div class="review-img-wrap">
+					<img 
+					src="<?=SITE_TEMPLATE_PATH?>/img/rew/no_photo.jpg"
+					>
+				</div>
+			
 	<?endif;?>
 			
 </div>
