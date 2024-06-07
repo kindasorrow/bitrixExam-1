@@ -45,7 +45,12 @@ $this->setFrameMode(true);
 	<div class="exam-review-doc">
 		<p>Документы:</p>
 		<?foreach($arResult['PROPERTIES']["FILE"]["VALUE"] as $file):?>
-		<div  class="exam-review-item-doc"><img class="rew-doc-ico" src="<?=SITE_TEMPLATE_PATH?>/img/icons/pdf_ico_40.png"><a href="<?=CFile::GetPath($file);?>" download>Файл 1</a></div>
+		<?
+			$path = CFile::GetPath($file);
+			$orFile = CFile::GetByID($file);
+			$arrFile = $orFile->Fetch();
+		?>		
+		<div  class="exam-review-item-doc"><img class="rew-doc-ico" src="<?=SITE_TEMPLATE_PATH?>/img/icons/pdf_ico_40.png"><a href="<?=CFile::GetPath($file);?>" download><?=$arrFile["ORIGINAL_NAME"]?></a></div>
 		<?endforeach;?>
 	</div>
 <?endif;?>
