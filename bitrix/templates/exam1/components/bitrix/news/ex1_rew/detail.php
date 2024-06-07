@@ -15,7 +15,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-
 $ElementID = $APPLICATION->IncludeComponent(
 	"bitrix:news.detail",
 	"",
@@ -68,6 +67,7 @@ $ElementID = $APPLICATION->IncludeComponent(
 		"SHARE_SHORTEN_URL_KEY" => $arParams["SHARE_SHORTEN_URL_KEY"],
 		"ADD_ELEMENT_CHAIN" => $arParams["ADD_ELEMENT_CHAIN"],
 		'STRICT_SECTION_CHECK' => $arParams['STRICT_SECTION_CHECK'],
+		'SET_BROWSER_TITLE' => 'Y',
 	],
 	$component,
 	['HIDE_ICONS' => 'Y']

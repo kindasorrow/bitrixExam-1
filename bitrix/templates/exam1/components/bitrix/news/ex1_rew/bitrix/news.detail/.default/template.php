@@ -11,6 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+$APPLICATION->SetTitle($arResult["NAME"] . ' test', true);
 ?>
 <div class="review-block">
 	<div class="review-text">
@@ -41,7 +42,7 @@ $this->setFrameMode(true);
 		<?endif?>
 	</div>
 </div>
-<?if(count($arResult['PROPERTIES']["FILE"]["VALUE"])):?>
+<?if(!empty($arResult['PROPERTIES']["FILE"]["VALUE"])):?>
 	<div class="exam-review-doc">
 		<p>Документы:</p>
 		<?foreach($arResult['PROPERTIES']["FILE"]["VALUE"] as $file):?>
