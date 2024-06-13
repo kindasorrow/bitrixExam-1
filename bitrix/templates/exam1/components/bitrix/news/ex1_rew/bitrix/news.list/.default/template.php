@@ -17,6 +17,16 @@ $this->setFrameMode(true);
 	<?=$arResult["NAV_STRING"]?><br />
 <?endif;?>
 <?foreach($arResult["ITEMS"] as $arItem):?>
+<?
+
+	$img = null;
+	
+	if(!empty($arItem["PREVIEW_PICTURE"]["ID"])) {
+		$img_res = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], array('width'=>68, 'height'=>50), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+		$img = $img_res ? $img_res["src"] : null;
+	}
+
+?>
 <div class="review-block" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 	<div class="review-text">
 		<div class="review-block-title">
@@ -49,9 +59,7 @@ $this->setFrameMode(true);
 				<div class="review-img-wrap">
 					<a href="<?=$arItem["DETAIL_PAGE_URL"]?>">
 					<img 
-					src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>"
-					width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>"
-					height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>"
+					src="<?=$img?>"
 					alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
 					title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
 					>
